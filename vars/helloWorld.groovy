@@ -14,4 +14,5 @@ def dayOfWeek(Map config = [:]) {
     def templete1 = libraryResource('a.yaml')
     def templete2 = libraryResource('b.yaml')
     println templete1+templete2
+    return templete1+templete2
 }
