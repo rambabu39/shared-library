@@ -15,12 +15,5 @@ def dayOfWeek(Map config = [:]) {
     List<String> args = [ 'a.yaml', 'b.yaml'];
     delf templete1 = libraryResource('a.yaml')
     delf templete2 = libraryResource('b.yaml')
-    
-    templates.add(templete1)
-    templates.add(templete2)
-    
-    def myyaml = new MyYaml()
-    def final_template = myyaml.merge(templates)
-    
-    println final_template
+    println final_template+templete2
 }
