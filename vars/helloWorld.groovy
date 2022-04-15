@@ -12,8 +12,7 @@ def DisplayName() {
 def dayOfWeek(Map config = [:]) {
     def templates = []
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
-    List<String> args = [ 'a.yaml', 'b.yaml'];
     delf templete1 = libraryResource('a.yaml')
     delf templete2 = libraryResource('b.yaml')
-    println final_template+templete2
+    println templete1+templete2
 }
