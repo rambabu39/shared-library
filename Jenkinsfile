@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    kubernetes(k8sagent(name: 'mini+pg'))
+    kubernetes(helloWorld([name: 'Newman', dayOfWeek: 'Friday']))
   }
   stages {
     stage('demo') {
