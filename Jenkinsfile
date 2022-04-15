@@ -1,15 +1,11 @@
 pipeline {
-  agent {
-    kubernetes(helloWorld([name: 'Newman', dayOfWeek: 'Friday']))
-  }
+  agent any
   stages {
     stage('demo') {
       steps {
         echo "this is a demo"
         script {
-          container('pg') {
-            sh 'su - postgres -c \'psql --version\''
-          }
+           helloWorld([name: 'Newman', dayOfWeek: 'Friday']
         }
       }
     }
