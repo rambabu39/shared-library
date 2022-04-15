@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                helloWorld([name: 'Rambabu', dayOfWeek: 'Friday'])
+                script{
+                    helloWorld.dayOfWeek([name: 'Rambabu', dayOfWeek: 'Friday'])
+                }
+                
             }
         }
     }
