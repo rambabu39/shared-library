@@ -9,7 +9,7 @@ pipeline {
 
             steps {
 
-                helloWorld([name: 'Newman', dayOfWeek: 'Friday'])
+                helloWorld.dayOfWeek([name: 'Newman', dayOfWeek: 'Friday'])
 
             }
 
