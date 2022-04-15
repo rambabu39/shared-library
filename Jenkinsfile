@@ -9,7 +9,7 @@ pipeline {
 
             steps {
 
-                helloWorld.dayOfWeek([name: 'Newman', dayOfWeek: 'Friday'])
+                helloWorld.DisplayName('Rambabu')
 
             }
 
