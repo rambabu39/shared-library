@@ -1,20 +1,11 @@
-
 pipeline {
-
     agent any
-
+ 
     stages {
-
-        stage('Example') {
-
+        stage('Hello') {
             steps {
-
-                DisplayName()
-
+                Greet('NaiveSkill')
             }
-
         }
-
     }
-
 }
