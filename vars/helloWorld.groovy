@@ -3,6 +3,6 @@ def call(Map config = [:]) {
 }
 
 
-def DisplayName(String name) {
-    sh "echo Hello from groovy file ${name}"
+def DisplayName() {
+    sh "echo Rambabu Nalluri running this script"
 }
