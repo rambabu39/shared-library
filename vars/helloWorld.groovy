@@ -9,7 +9,7 @@ def DisplayName() {
 }
 def dayOfWeek(Map config = [:]) {
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
-    
-    def finalYaml = MyYaml.merge(['a.yaml','b.yaml'])
+    List<String> args = [ 'a.yaml', 'b.yaml'];
+    def finalYaml = MyYaml.merge(args)
     println finalYaml
 }
