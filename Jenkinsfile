@@ -1,10 +1,20 @@
+
 pipeline {
+
     agent any
+
     stages {
-        stage('test') {
+
+        stage('Example') {
+
             steps {
-                sayHello 'Joe'
+
+                helloWorld([name: 'Newman', dayOfWeek: 'Friday'])
+
             }
+
         }
+
     }
+
 }
