@@ -1,13 +1,14 @@
 pipeline {
-  agent any
-  stages {
-    stage('demo') {
-      steps {
-        echo "this is a demo"
-        script {
-           helloWorld([name: 'Newman', dayOfWeek: 'Friday']
+    agent any
+ 
+    stages {
+        stage('Hello') {
+            steps {
+                script{
+                    helloWorld.dayOfWeek([name: 'Rambabu', dayOfWeek: 'Friday'])
+                }
+                
+            }
         }
-      }
     }
-  }
 }
