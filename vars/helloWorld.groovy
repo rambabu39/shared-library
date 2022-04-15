@@ -1,3 +1,5 @@
+import MyYaml
+
 def call(Map config = [:]) {
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
 }
@@ -8,8 +10,12 @@ def DisplayName() {
     sh "echo Rambabu Nalluri running this script"
 }
 def dayOfWeek(Map config = [:]) {
+    
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
     List<String> args = [ 'a.yaml', 'b.yaml'];
-    def finalYaml = merge(args)
-    println finalYaml
+
+    def myyaml = new MyYaml()
+    def final_template = myyaml.merge(args)
+    
+    println final_template
 }
