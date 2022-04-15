@@ -9,7 +9,7 @@ pipeline {
 
             steps {
 
-                helloWorld.DisplayName()
+                DisplayName()
 
             }
 
