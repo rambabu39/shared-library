@@ -1,16 +1,17 @@
 pipeline {
-    agent any
- 
-    stages {
-        stage('Hello') {
-            steps {
-                script{
-                    //helloWorld.dayOfWeek([name: 'Rambabu', dayOfWeek: 'Friday'])
-                    k8sagent(name: 'base', selector: 'kubernetes.io/hostname: worker1')
-
-                }
-                
-            }
+  agent {
+    kubernetes(k8sagent(name: 'mini+pg'))
+  }
+  stages {
+    stage('demo') {
+      steps {
+        echo "this is a demo"
+        script {
+          container('pg') {
+            sh 'su - postgres -c \'psql --version\''
+          }
         }
+      }
     }
+  }
 }
