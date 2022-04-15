@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                Greet('NaiveSkill')
+                helloWorld([name: 'Rambabu', dayOfWeek: 'Friday'])
             }
         }
     }
