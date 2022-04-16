@@ -1,3 +1,6 @@
+@Grab('org.yaml:snakeyaml:1.17')
+import org.yaml.snakeyaml.Yaml
+
 import MyYaml
 
 def call(Map config = [:]) {
@@ -11,9 +14,16 @@ def DisplayName() {
 }
 def dayOfWeek(Map config = [:]) {
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
-    def templete1 = libraryResource('a.yaml')
-    def templete2 = libraryResource('b.yaml')
-    println templete1
-    println templete1+templete2
-    return templete1+templete2
+    
+    Yaml parser = new Yaml()
+    config = parser.load( new File('resources/podTemplates/mini.yaml').text )
+    println config.doesntExists ?: "doesnExists doesn't exists"
+    println config.limits?.memory
+    println config.requests?.memory
+    
+//     def templete1 = libraryResource('a.yaml')
+//     def templete2 = libraryResource('b.yaml')
+//     println templete1
+//     println templete1+templete2
+//     return templete1+templete2
 }
