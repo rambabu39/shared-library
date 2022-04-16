@@ -16,7 +16,9 @@ def dayOfWeek(Map config = [:]) {
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
     
     Yaml parser = new Yaml()
-    config = parser.load( new File('/resources/podTemplates/mini.yaml').text )
+    def templete1 = libraryResource('/podTemplates/mini.yaml')
+    println templete1
+    config = parser.load(templete1)
     println config.doesntExists ?: "doesnExists doesn't exists"
     println config.limits?.memory
     println config.requests?.memory
