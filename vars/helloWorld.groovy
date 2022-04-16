@@ -19,9 +19,9 @@ def dayOfWeek(Map config = [:]) {
     def templete1 = libraryResource('/podTemplates/mini.yaml')
     println templete1
     config = parser.load(templete1)
-    println config.doesntExists ?: "doesnExists doesn't exists"
-    println config.limits?.memory
-    println config.requests?.memory
+    println config.spec?:"doesnExists doesn't exists"
+    println config.spec?.containers?.resources
+    println config.spec?.containers?.requests
     
 //     def templete1 = libraryResource('a.yaml')
 //     def templete2 = libraryResource('b.yaml')
