@@ -21,7 +21,8 @@ def dayOfWeek(Map config = [:]) {
     config = parser.load(templete1)
     println config.spec?:"doesnExists doesn't exists"
     println config.spec?.containers?.resources
-    println config.spec?.containers?.requests
+    println config.spec?.containers?.resources?.limits
+    println config.spec?.containers?.resources?.requests
     
 //     def templete1 = libraryResource('a.yaml')
 //     def templete2 = libraryResource('b.yaml')
