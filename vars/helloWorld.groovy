@@ -12,7 +12,7 @@ def Greet(name) {
 def DisplayName() {
     sh "echo Rambabu Nalluri running this script"
 }
-def dayOfWeek(Map config = [:]) {
+def dayOfWeek(def arr) {
     //sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
     
     Yaml parser = new Yaml()
@@ -24,7 +24,7 @@ def dayOfWeek(Map config = [:]) {
     config = parser.load(templete1)
     println config
     def tempContaners = []
-    for(def tempname in config){
+    for(def tempname in arr){
         def temp = containerconfig.containers[0].clone()
             temp.name = tempname
             config.spec.containers.add(temp)
