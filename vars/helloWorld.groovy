@@ -17,9 +17,15 @@ def dayOfWeek(def arr) {
     
     Yaml parser = new Yaml()
     
-    def containeTemplate = libraryResource('/podTemplates/container.yaml')
-    containerconfig = parser.load(containeTemplate)
-    println containerconfig
+    InputStream inputStream = this.getClass()
+  .getClassLoader()
+  .getResourceAsStream("/podTemplates/container.yaml");
+Map<String, Object> obj = parser.load(inputStream);
+System.out.println(obj);
+    
+//     def containeTemplate = libraryResource('/podTemplates/container.yaml')
+//     containerconfig = parser.load(containeTemplate)
+//     println containerconfig
     def templete1 = libraryResource('/podTemplates/KubernetesPod.yaml')
     config = parser.load(templete1)
     println config
