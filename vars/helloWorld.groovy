@@ -26,8 +26,9 @@ def dayOfWeek(def arr) {
     for(def tempname in arr){
         def temp = containerconfig.containers[0].clone()
             temp.name = tempname
-            config.spec.containers.add(temp)
+            tempContaners.add(temp)
     }
+    config.spec.containers = tempContaners
    println config.toString()
     return config.toString()
 }
