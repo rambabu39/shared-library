@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 script{
-                    helloWorld.dayOfWeek([name: 'Rambabu', dayOfWeek: 'Friday'])
+                    helloWorld.dayOfWeek(["Jerry", "Long", "Dustin", "Dustin"])
                 }
                 
             }
