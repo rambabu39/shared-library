@@ -13,20 +13,22 @@ def DisplayName() {
     sh "echo Rambabu Nalluri running this script"
 }
 def dayOfWeek(Map config = [:]) {
-    sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
+    //sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
     
     Yaml parser = new Yaml()
-    def templete1 = libraryResource('/podTemplates/mini.yaml')
-    println templete1
-    config = parser.load(templete1)
-    println config.spec?:"doesnExists doesn't exists"
-    println config.spec?.containers?.resources
-    println config.spec?.containers?.resources?.limits
-    println config.spec?.containers?.resources?.requests
     
-//     def templete1 = libraryResource('a.yaml')
-//     def templete2 = libraryResource('b.yaml')
-//     println templete1
-//     println templete1+templete2
-//     return templete1+templete2
+    def containeTemplate = libraryResource('/podTemplates/container.yaml')
+    containerconfig = parser.load(containeTemplate)
+    println containerconfig
+    def templete1 = libraryResource('/podTemplates/KubernetesPod.yaml')
+    config = parser.load(templete1)
+    println config
+    def tempContaners = []
+    for(def tempname in config){
+        def temp = containerconfig.containers[0].clone()
+            temp.name = tempname
+            config.spec.containers.add(temp)
+    }
+   println config.toString()
+   return config.toString()
 }
