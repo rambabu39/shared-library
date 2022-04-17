@@ -29,6 +29,6 @@ def dayOfWeek(def arr) {
             tempContaners.add(temp)
     }
     config.spec.containers = tempContaners
-    println parser.dump(config)
+    println parser.represent(config)
     return parser.dumpAsMap(config)
 }
