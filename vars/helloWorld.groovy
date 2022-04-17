@@ -22,12 +22,12 @@ def dayOfWeek(def arr) {
     def templete1 = libraryResource('/podTemplates/KubernetesPod.yaml')
     config = parser.load(templete1)
     println config
-//     def tempContaners = []
-//     for(def tempname in arr){
-//         def temp = containerconfig.containers[0].clone()
-//             temp.name = tempname
-//             config.spec.containers.add(temp)
-//     }
-//    println config.toString()
+    def tempContaners = []
+    for(def tempname in arr){
+        def temp = containerconfig.containers[0].clone()
+            temp.name = tempname
+            config.spec.containers.add(temp)
+    }
+   println config.toString()
     return config.toString()
 }
