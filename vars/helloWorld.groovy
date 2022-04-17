@@ -30,5 +30,5 @@ def dayOfWeek(def arr) {
 //             config.spec.containers.add(temp)
 //     }
 //    println config.toString()
-//    return config.toString()
+    return config.toString()
 }
