@@ -1,10 +1,4 @@
-- name: jnlp
-    image: jenkinsci/jnlp-slave:3.29-1
-    # better to use your own jenkins slave
-    #image: docker.example.com/jenkins_slave:v1.0.0
-    imagePullPolicy: Always
-    command:
-    - /usr/local/bin/jenkins-slave
-    volumeMounts:
-    - mountPath: /home/jenkins/repo_cache
-      name: volume-0
+- name: myapp
+        image: myreg/myapp:v1
+        ports:
+        - containerPort: 80
