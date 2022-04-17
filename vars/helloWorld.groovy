@@ -17,12 +17,12 @@ def dayOfWeek(def arr) {
     
     Yaml parser = new Yaml()
     
-    def containeTemplate = libraryResource('/podTemplates/container.yaml')
-    containerconfig = parser.load(containeTemplate)
-    println containerconfig
-//     def templete1 = libraryResource('/podTemplates/KubernetesPod.yaml')
-//     config = parser.load(templete1)
-//     println config
+//     def containeTemplate = libraryResource('/podTemplates/container.yaml')
+//     containerconfig = parser.load(containeTemplate)
+//     println containerconfig
+    def templete1 = libraryResource('/podTemplates/KubernetesPod.yaml')
+    config = parser.load(templete1)
+    println config
 //     def tempContaners = []
 //     for(def tempname in arr){
 //         def temp = containerconfig.containers[0].clone()
