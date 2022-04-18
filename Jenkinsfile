@@ -5,10 +5,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                script{
-                    helloWorld.dayOfWeek(["Jerry", "Long", "Dustin", "Dustin"])
-                }
-                
+                sh 'Groovy --version'
             }
         }
     }
